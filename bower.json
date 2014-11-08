@@ -1,0 +1,31 @@
+{
+  "name": "dashboard_template",
+  "version": "0.0.1",
+  "authors": [
+    "hirakiuc <hirakiuc@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "3.3.0",
+    "jquery": "2.1.1",
+    "grunt-contrib-less": "~0.12.0",
+    "grunt-contrib-watch": "~0.6.1"
+  },
+  "exportsOverride": {
+    "bootstrap": {
+      "js": "dist/js/bootstrap.min.js",
+      "css": "dist/css/bootstrap.min.css"
+    },
+    "jquery": {
+      "js": "jquery.min.js"
+    }
+  }
+}
