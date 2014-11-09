@@ -7,7 +7,8 @@ module.exports = (grunt) ->
       install:
         options:
           targetDir: './dst'
-          layout: 'byType'
+          layout: (type, component) ->
+            type
           install: true
           verbose: false
           cleanTargetDir: true
