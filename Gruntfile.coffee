@@ -59,4 +59,5 @@ module.exports = (grunt) ->
     if t.substring(0, 6) is 'grunt-'
       grunt.loadNpmTasks t
 
+  grunt.registerTask 'build', ['haml', 'compass', 'coffee']
   grunt.registerTask 'default', ['connect', 'watch']
