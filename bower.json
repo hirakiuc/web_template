@@ -8,10 +8,8 @@
   "private": true,
   "ignore": [
     "**/.*",
-    "vendor/node_modules",
-    "vendor/bower_components",
-    "test",
-    "tests"
+    "node_modules",
+    "bower_components"
   ],
   "devDependencies": {
     "bootstrap": "3.3.0",
