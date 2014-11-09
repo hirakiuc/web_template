@@ -31,7 +31,7 @@
     },
     "fontawesome": {
       "css": "css/font-awesome.min.css",
-      "font": "fonts/*"
+      "fonts": "fonts/*"
     }
   }
 }

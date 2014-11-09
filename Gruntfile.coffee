@@ -23,6 +23,17 @@ module.exports = (grunt) ->
         src: ['**/*.coffee']
         dest: 'dst/js'
         ext: '.js'
+    compass:
+      devel:
+        options:
+          config: 'config/compass.rb'
+          environment: 'development'
+          bundleExec: true
+      prod:
+        options:
+          config: 'config/compass.rb'
+          environment: 'production'
+          bundleExec: true
     watch:
       options:
         livereload: true
@@ -35,6 +46,9 @@ module.exports = (grunt) ->
       coffee:
         tasks: 'coffee'
         files: ['src/**/*.coffee']
+      compass:
+        tasks: 'compass:devel'
+        files: ['src/**/*.scss', 'src/**/*.sass']
     connect:
       server:
         options:
@@ -45,4 +59,4 @@ module.exports = (grunt) ->
     if t.substring(0, 6) is 'grunt-'
       grunt.loadNpmTasks t
 
-  grunt.registerTask 'default', ['bower:install']
+  grunt.registerTask 'default', ['connect', 'watch']
