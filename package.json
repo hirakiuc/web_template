@@ -1,13 +1,13 @@
 {
-  "name": "dashboard_template",
-  "version": "0.0.10",
-  "description": "my sitemeta dashboard",
-  "main": "index.js",
+  "name": "template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "compass": "^0.1.0",
     "grunt": "0.4.5",
