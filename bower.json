@@ -8,14 +8,15 @@
   "private": true,
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
+    "vendor/node_modules",
+    "vendor/bower_components",
     "test",
     "tests"
   ],
   "devDependencies": {
     "bootstrap": "3.3.0",
-    "jquery": "2.1.1"
+    "jquery": "2.1.1",
+    "fontawesome": "~4.2.0"
   },
   "exportsOverride": {
     "bootstrap": {
@@ -23,7 +24,14 @@
       "css": "dist/css/bootstrap.min.css"
     },
     "jquery": {
-      "js": "jquery.min.js"
+      "js": [
+        "dist/jquery.min.js",
+        "dist/jquery.min.map"
+      ]
+    },
+    "fontawesome": {
+      "css": "css/font-awesome.min.css",
+      "font": "fonts/*"
     }
   }
 }

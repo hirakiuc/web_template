@@ -1,23 +1,26 @@
 
 module.exports = (grunt) ->
-  'use strict'
+  pkg = grunt.file.readJSON("package.json")
+
   grunt.initConfig
-    pkg: grunt.file.readJSON("package.json")
     bower:
       install:
         options:
-          targetDir: './lib'
+          targetDir: './dst'
           layout: 'byType'
           install: true
           verbose: false
           cleanTargetDir: true
           cleanBowerDir: false
+    haml:
+      one:
+        files: 'dst/index.html': 'src/index.haml'
     coffee:
       compile:
         expand: true
         cwd: 'src/'
         src: ['**/*.coffee']
-        dest: 'dst/'
+        dest: 'dst/js'
         ext: '.js'
     watch:
       options:
@@ -25,15 +28,20 @@ module.exports = (grunt) ->
       html:
         files: ['html/**/*.html']
         tasks: ['']
+      haml:
+        tasks: 'haml:one'
+        files: ['src/**/*.haml']
+      coffee:
+        tasks: 'coffee'
+        files: ['src/**/*.coffee']
     connect:
       server:
         options:
           port: 9000
-          base: 'html'
+          base: 'dst'
 
-  grunt.loadNpmTasks 'grunt-bower-task'
-  grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-contrib-connect'
-  grunt.loadNpmTasks 'grunt-contrib-coffee'
+  for t of pkg.devDependencies
+    if t.substring(0, 6) is 'grunt-'
+      grunt.loadNpmTasks t
 
   grunt.registerTask 'default', ['bower:install']
